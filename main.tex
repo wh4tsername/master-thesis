@@ -1,0 +1,147 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage[a4paper, % Согласно требованиям к ВКР
+  lmargin=30mm, rmargin=15mm, tmargin=20mm, bmargin=20mm]{geometry}
+\usepackage{multirow}
+
+
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+
+
+% Согласно требованиям к ВКР
+\defaultfontfeatures{Ligatures=TeX}
+
+\setmainfont{Times New Roman}
+\setmonofont{Courier New}
+\setsansfont{Arial}
+
+\newfontfamily\cyrillicfont{Times New Roman}
+\newfontfamily\cyrillicfontsf{Arial}
+\newfontfamily\cyrillicfonttt{Courier New}
+
+\newfontfamily\englishfont{Times New Roman}
+\newfontfamily\englishfontsf{Arial}
+\newfontfamily\englishfonttt{Courier New}
+
+\linespread{1.5}
+
+\usepackage[backend=biber,
+  bibencoding=utf8,
+  sorting=none,
+  style=gost-numeric,
+  language=autobib,
+  autolang=other,
+  clearlang=true,
+  defernumbers=true,
+  sortcites=true,
+  doi=true,
+  isbn=true,
+  ]{biblatex}
+\bibliography{bibliography}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks,colorlinks=false,citecolor=Black,urlcolor=Black]{hyperref}
+\usepackage{caption}
+\renewcommand{\UrlFont}{\small\rmfamily\tt}
+
+
+\renewcommand\thesection{\arabic{section}}
+
+\usepackage{amsfonts}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{wrapfig}
+
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% style end
+
+\renewcommand*{\maketitle}{
+\begin{titlepage}
+  \begin{center}
+    \linespread{1}
+    \small
+    Федеральное государственное автономное образовательное учреждение\break высшего образования\par
+    <<Московский физико-технический институт \break (национальный исследовательский университет)>>\par
+    Физтех-школа Прикладной Математики и Информатики\par
+    Кафедра корпоративных информационных систем\par
+  \end{center}
+%
+  {
+    \footnotesize
+    {\bf Направление подготовки / специальность}: 01.03.02 Прикладная математика и информатика\newline
+    {\bf Направленность (профиль) подготовки}: Прикладная математика и компьютерные науки
+  }
+%
+  {
+    \topskip0pt
+    \vspace*{\fill}
+    \begin{center}
+      {\bf\Large Разработка инструмента тестирования
+      \break для курса распределенных систем}\par
+      (бакалаврская работа)
+    \end{center}
+    \vspace*{\fill}
+  }
+%
+  \hfill
+  \begin{minipage}[t]{8cm}
+    {\bf Студент: \newline}
+    Поминов Денис Игоревич\newline
+    \vspace{-3mm}
+    \rule{8cm}{0.15mm}
+    \centerline{\scriptsize\it (подпись студента)}\newline
+%
+    {\bf Научный руководитель: \newline}
+    Липовский Роман Германович\newline
+    \vspace{-3mm}
+    \rule{8cm}{0.15mm}
+    \centerline{\scriptsize\it (подпись научного руководителя)}
+  \end{minipage}
+
+    \vspace*{\fill}
+    \begin{center}
+      Москва 2022
+    \end{center}
+\end{titlepage}
+}
+
+
+\begin{document}
+\maketitle
+
+\newpage
+\setcounter{page}{2}
+
+\vspace*{\fill}
+\begin{abstract}
+Тестирование распределенных алгоритмов – важная, но при этом нетривиальная задача из-за  недетерминизма как сети, так и отдельных узлов. Существующие подходы к  тестированию – fault-injection и model checking – по своему несовершенны: либо не покрывают все возможные сценарии исполнения, либо применяются к спецификации алгоритмов, а не тестируют непосредственно реализацию.
+
+Цель данной работы – разработка инструмента для тестирования реализации распределенных алгоритмов, интегрированного в фреймворк курса по распределенным системам. Инструмент должен совмещать сильные стороны существующих подходов: как fault-injection, позволять тестировать непосредственно высокоуровневую реализацию на С++, при этом проверять все возможные состояния исполнения, как model checking.
+
+В работе описана реализация такого инструмента и продемонстрировано его применение на содержательном примере – реализации лианеаризуемого реплицированного атомарного key value хранилища на основе алгоритма ABD.
+\end{abstract}
+\vspace*{\fill}
+
+\newpage
+\tableofcontents
+\newpage
+
+\include{parts/intro/main}
+\include{parts/analysis/main}
+\include{parts/impl/main}
+\include{parts/user/main}
+\include{parts/conclusion/main}
+
+\newpage
+\printbibliography
+\end{document}
