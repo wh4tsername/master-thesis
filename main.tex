@@ -65,70 +65,88 @@
 
 % style end
 
-\renewcommand*{\maketitle}{
-\begin{titlepage}
-  \begin{center}
-    \linespread{1}
-    \small
-    Федеральное государственное автономное образовательное учреждение\break высшего образования\par
-    <<Московский физико-технический институт \break (национальный исследовательский университет)>>\par
-    Физтех-школа Прикладной Математики и Информатики\par
-    Кафедра корпоративных информационных систем\par
-  \end{center}
+% \renewcommand*{\maketitle}{
+% \begin{titlepage}
+  % \begin{center}
+  %   \linespread{1}
+  %   \small
+  %   Федеральное государственное автономное образовательное учреждение\break высшего образования\par
+  %   <<Московский физико-технический институт \break (национальный исследовательский университет)>>\par
+  %   Физтех-школа Прикладной Математики и Информатики\par
+  %   Кафедра корпоративных информационных систем\par
+  % \end{center}
+% 
+  % {
+  %   \footnotesize
+  %   {\bf Направление подготовки / специальность}: 01.03.02 Прикладная математика и информатика\newline
+  %   {\bf Направленность (профиль) подготовки}: Прикладная математика и компьютерные науки
+  % }
 %
-  {
-    \footnotesize
-    {\bf Направление подготовки / специальность}: 01.03.02 Прикладная математика и информатика\newline
-    {\bf Направленность (профиль) подготовки}: Прикладная математика и компьютерные науки
-  }
+  % {
+  %   \topskip0pt
+  %   \vspace*{\fill}
+  %   \begin{center}
+  %     {\bf\Large Разработка инструмента тестирования
+  %     \break для курса распределенных систем}\par
+  %     (бакалаврская работа)
+  %   \end{center}
+  %   \vspace*{\fill}
+  % }
 %
-  {
-    \topskip0pt
-    \vspace*{\fill}
-    \begin{center}
-      {\bf\Large Разработка инструмента тестирования
-      \break для курса распределенных систем}\par
-      (бакалаврская работа)
-    \end{center}
-    \vspace*{\fill}
-  }
+  % \hfill
+  % \begin{minipage}[t]{8cm}
+  %   {\bf Студент: \newline}
+  %   Поминов Денис Игоревич\newline
+  %   \vspace{-3mm}
+  %   \rule{8cm}{0.15mm}
+  %   \centerline{\scriptsize\it (подпись студента)}\newline
 %
-  \hfill
-  \begin{minipage}[t]{8cm}
-    {\bf Студент: \newline}
-    Поминов Денис Игоревич\newline
-    \vspace{-3mm}
-    \rule{8cm}{0.15mm}
-    \centerline{\scriptsize\it (подпись студента)}\newline
-%
-    {\bf Научный руководитель: \newline}
-    Липовский Роман Германович\newline
-    \vspace{-3mm}
-    \rule{8cm}{0.15mm}
-    \centerline{\scriptsize\it (подпись научного руководителя)}
-  \end{minipage}
+    % {\bf Научный руководитель: \newline}
+%     Липовский Роман Германович\newline
+%     \vspace{-3mm}
+%     \rule{8cm}{0.15mm}
+%     \centerline{\scriptsize\it (подпись научного руководителя)}
+%   \end{minipage}
 
-    \vspace*{\fill}
-    \begin{center}
-      Москва 2022
-    \end{center}
-\end{titlepage}
-}
+%     \vspace*{\fill}
+%     \begin{center}
+%       Москва 2022
+%     \end{center}
+% \end{titlepage}
+% }
 
+\usepackage{amsthm}
+
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Определение}
+
+\newtheorem{theorem}{Теорема}
+\newtheorem{task}{Задача}
+\newtheorem{statement}{Утверждение}
+\newtheorem{algo}{Алгоритм}
+\newtheorem{implication}[statement]{Следствие}
+\newtheorem{lemma}{Лемма}
+\newtheorem*{comment}{Комментарий}
+
+\DeclareMathOperator{\diam}{diam}
 
 \begin{document}
-\maketitle
+% \maketitle
 
 \newpage
 \setcounter{page}{2}
 
 \vspace*{\fill}
 \begin{abstract}
-Тестирование распределенных алгоритмов – важная, но при этом нетривиальная задача из-за  недетерминизма как сети, так и отдельных узлов. Существующие подходы к  тестированию – fault-injection и model checking – по своему несовершенны: либо не покрывают все возможные сценарии исполнения, либо применяются к спецификации алгоритмов, а не тестируют непосредственно реализацию.
-
-Цель данной работы – разработка инструмента для тестирования реализации распределенных алгоритмов, интегрированного в фреймворк курса по распределенным системам. Инструмент должен совмещать сильные стороны существующих подходов: как fault-injection, позволять тестировать непосредственно высокоуровневую реализацию на С++, при этом проверять все возможные состояния исполнения, как model checking.
-
-В работе описана реализация такого инструмента и продемонстрировано его применение на содержательном примере – реализации лианеаризуемого реплицированного атомарного key value хранилища на основе алгоритма ABD.
+Работа посвящена разработке инструмента для эффективного запуска графов обработки данных на MapReduce кластерах. Итоговый компонент - executor для библиотеки описания pipeline-ов Roren, исполняющий код поверх кластера YT.
 \end{abstract}
 \vspace*{\fill}
 
@@ -137,9 +155,9 @@
 \newpage
 
 \include{parts/intro/main}
-\include{parts/analysis/main}
-\include{parts/impl/main}
-\include{parts/user/main}
+\include{parts/design/main}
+\include{parts/executor/main}
+\include{parts/pipeline/main}
 \include{parts/conclusion/main}
 
 \newpage
