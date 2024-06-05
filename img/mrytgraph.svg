@@ -1,0 +1,35 @@
+<svg width="872" height="932" viewBox="0 0 654 699" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="translate(186.08795131336558,696.3522727272727) scale(0.6619318181818182)">
+<polygon fill="white" stroke="none" points="-4,4 -4,-1052 429.76,-1052 429.76,4 -4,4"/>
+<!-- op&#45;0 -->
+<g id="node1" class="node">
+<title>op-0</title>
+<ellipse fill="none" stroke="black" cx="212.88" cy="-527.5" rx="65.74" ry="65.74"/>
+<text text-anchor="middle" x="212.88" y="-523.3" font-family="Times,serif" font-size="14.00">MapReduce-0</text>
+</g>
+<!-- table&#45;1 -->
+<g id="node2" class="node">
+<title>table-1</title>
+<polygon fill="none" stroke="black" points="425.76,-425.76 0,-425.76 0,0 425.76,0 425.76,-425.76"/>
+<text text-anchor="middle" x="212.88" y="-208.68" font-family="Times,serif" font-size="14.00">//tmp/cpp-mapreduce-tests/5c6891d8-af6df065-188a782e-a32897ae/out0</text>
+</g>
+<!-- op&#45;0&#45;&gt;table&#45;1 -->
+<g id="edge1" class="edge">
+<title>op-0-&gt;table-1</title>
+<path fill="none" stroke="black" d="M212.88,-461.34C212.88,-453.84 212.88,-445.9 212.88,-437.66"/>
+<polygon fill="black" stroke="black" points="216.38,-437.75 212.88,-427.75 209.38,-437.75 216.38,-437.75"/>
+</g>
+<!-- table&#45;0 -->
+<g id="node3" class="node">
+<title>table-0</title>
+<polygon fill="none" stroke="black" points="422.26,-1048 3.5,-1048 3.5,-629.24 422.26,-629.24 422.26,-1048"/>
+<text text-anchor="middle" x="212.88" y="-834.42" font-family="Times,serif" font-size="14.00">//tmp/cpp-mapreduce-tests/5c6891d8-af6df065-188a782e-a32897ae/in0</text>
+</g>
+<!-- table&#45;0&#45;&gt;op&#45;0 -->
+<g id="edge2" class="edge">
+<title>table-0-&gt;op-0</title>
+<path fill="none" stroke="black" d="M212.88,-628.86C212.88,-620.58 212.88,-612.54 212.88,-604.84"/>
+<polygon fill="black" stroke="black" points="216.38,-604.97 212.88,-594.97 209.38,-604.97 216.38,-604.97"/>
+</g>
+</g>
+</svg>
